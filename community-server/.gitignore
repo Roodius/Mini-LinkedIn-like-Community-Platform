@@ -1,6 +1,10 @@
-dist
+# Ignore build and dependency folders
+/dist
+/node_modules
 
-node_module
-
+# Ignore environment files
 .env
 
+# OS or Editor files (optional)
+.DS_Store
+*.log
