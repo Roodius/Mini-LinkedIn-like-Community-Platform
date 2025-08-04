@@ -1,5 +1,4 @@
 import axios from "axios"
-import { div } from "framer-motion/client";
 import { useEffect, useState } from "react"
 
 
