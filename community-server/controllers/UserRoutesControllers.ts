@@ -21,13 +21,13 @@ const SignUpSchema = z.object({
   email:z.string().email('Invalid email format'),
 })
 
-interface jwtpayload {
+export interface jwtpayload {
     userId:string,
-    email:string
+    username:string
 }
 
-const generateToken = (userId:string, email:string):string => {
-        const mixup:jwtpayload = {userId , email};
+const generateToken = (userId:string, username:string):string => {
+        const mixup:jwtpayload = {userId , username};
 
         if(!SECRET){
             throw new Error("JWT secret is not defined");
@@ -55,7 +55,7 @@ export const signup =async (req:any,res:any) => {
 
     try {
 
-        const Token = generateToken(userId,email);
+        const Token = generateToken(userId,username);
         await User.create({
         firstName,
         lastName,

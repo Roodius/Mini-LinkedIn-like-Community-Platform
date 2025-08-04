@@ -5,7 +5,7 @@ import { getpostsById,craetePost,getposts } from "../controllers/postRouteContro
 
 
 router.post('/createpost',userMiddleware,craetePost);
-router.get('/AdminAccess',userMiddleware,getposts);
+router.get('/AdminAccess',getposts);
 router.get('/post/:userId',userMiddleware,getpostsById);
 
 export default router;

@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* src/index.css or App.css */
+@font-face {
+  font-family: 'Zed Plex Mono';
+  src: url('./assets/fonts/ZedPlexMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Zed Plex Mono', monospace;
+}

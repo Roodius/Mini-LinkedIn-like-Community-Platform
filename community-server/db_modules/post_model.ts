@@ -11,18 +11,19 @@ interface Userpost extends Document {
 const postSchema = new Schema({
     title:{
         type:String,
-        required:false
+        required:true
     },
     description:{
         type:String,
-        required:false
+        required:true
     },
     authorName:{
         type:String,
-        required:false
+          required: true
     },
     timestamp:{
         type:Date,
+        default:Date.now
     },
     userId:{
         type:String

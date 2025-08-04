@@ -4,9 +4,15 @@ dotenv.config();
 const SECRET = process.env.jwt_secret
 // console.log(SECRET);
 import { HTTPcodes } from '../responseCODES/HTTPcodes.js';
+import { NextFunction,Response,Request } from 'express';
+
+interface JwtPayload {
+  userId: string;
+  username: string;
+}
 
 
-export const userMiddleware = (req:any,res:any,next:any) => {
+export const userMiddleware = (req: Request & { user?: JwtPayload }, res: Response, next: NextFunction) => {
     const BearerToken = req.headers.authorization;
 
     if(!BearerToken || !BearerToken.startsWith("Bearer ")){
@@ -18,7 +24,7 @@ export const userMiddleware = (req:any,res:any,next:any) => {
     }
     try{
         const token = BearerToken.split(' ')[1];
-        const decodedToken = jwt.verify(token,SECRET);
+        const decodedToken = jwt.verify(token,SECRET)  as JwtPayload
         req.user = decodedToken;
         next();
     } catch(error:any){
