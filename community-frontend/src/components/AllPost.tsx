@@ -41,7 +41,7 @@ interface InputProps {
 }
 
 
-const RenderPost = ({post,index}:InputProps) => {
+const RenderPost = ({post}:InputProps) => {
 
     return (
          <div className="w-full">
