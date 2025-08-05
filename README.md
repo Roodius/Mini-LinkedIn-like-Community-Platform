@@ -1,3 +1,6 @@
+### Before Run it any folder Do ====>
+npm run build 
+npm start and npm run dev
 # 📘 API Documentation – Community Server
 
 This is the REST API documentation for the Community Server built with Node.js, TypeScript, MongoDB, and JWT authentication.
